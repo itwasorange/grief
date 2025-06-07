@@ -444,5 +444,17 @@ It's Pride Month but all I feel is grief</p>
     window.addEventListener('scroll', setOrangeBackground);
     window.addEventListener('load', setOrangeBackground);
   </script>
+<div id="visitor-count" style="margin-top: 2rem; text-align: center; font-family: monospace; font-size: 0.75rem; color: white;">
+  Visitors: <span id="count">...</span>
+</div>
+
 </body>
+  <script>
+  fetch('https://api.counterapi.dev/v1/itwasorange2025/visit/up')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('count').textContent = data.value;
+    })
+    .catch(error => console.error('Visitor counter error:', error));
+</script>
 </html>
