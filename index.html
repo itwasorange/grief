@@ -81,9 +81,9 @@
 </head>
 <body>
 
-<div style="background: white; color: black; padding: 1.5rem 2rem; max-width: 600px; width: 100%; font-family: 'Times New Roman', serif; text-align: left; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 0.5rem; margin: 2rem auto;">
-  <p style="margin: 0;">A grief-letter about queer love and a Muslim woman<br>
-  I am a wounded animal and I am begging you to hear my scream</p>
+<div style="background: #fff0e0; color: black; padding: 1.5rem 2rem; max-width: 600px; width: 100%; font-family: 'Times New Roman', serif; text-align: left; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 0.5rem; margin: 2rem auto;">
+  <p style="margin: 0;">A grief-letter about queer love and a Muslim woman</p>
+  <p style="margin: 0; font-size: 1rem;">I am a wounded animal and I am begging you to hear my scream</p> 
 </div>
 
 <p>I will speak then</p>
@@ -433,7 +433,7 @@ It's Pride Month but all I feel is grief</p>
 </div>
 
 <div style="margin-top: 30rem; display: flex; justify-content: center;">
-  <div style="background: white; color: black; padding: 1.5rem 2rem; max-width: 600px; width: 100%; font-family: 'Times New Roman', serif; text-align: left; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 0.5rem;">
+  <div style="background: #fffaf5; color: black; padding: 1.5rem 2rem; max-width: 600px; width: 100%; font-family: 'Times New Roman', serif; text-align: left; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 0.5rem;">
     <p style="margin: 0;">If this resonated with you let me know at: <strong>itwasorange@proton.me</strong></p>
   </div>
 </div>
@@ -456,7 +456,8 @@ It's Pride Month but all I feel is grief</p>
     const setOrangeBackground = () => {
       const scrollY = window.scrollY || window.pageYOffset;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = Math.min(scrollY / docHeight, 1);
+      const effectiveScroll = Math.max(scrollY - (0.30 * docHeight), 0);
+      const scrollPercent = Math.min(effectiveScroll / (docHeight * 0.70), 1);
 
       // Blend from #fffaf5 (near white) to #fff0e0 (soft orange)
       const r = Math.round(255);
